@@ -1,0 +1,12 @@
+alias dch='dev typecheck && dev style --include-branch-commits && dev test --include-branch-commits'
+alias dt='dev style && dev test'
+alias dta='dev style --all && dev test --all'
+alias db-test-reset='bin/rails db:reset RAILS_ENV=test || bin/rails db:cpt_migrate lhm:run:all RAILS_ENV=test'
+
+lhm-r(){
+  bin/rails lhm:revert VERSION=$1
+}
+
+tapioca() {
+  bin/tapioca dsl "$@"
+}
